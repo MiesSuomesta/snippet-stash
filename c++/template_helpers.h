@@ -4,7 +4,7 @@
 /* 
 	AUTHOR: Lauri Jakku <lja@lja.fi>
 
-	Usage:
+	Usage example:
 
 	withinRange<double> is_valid_percent {0, 100}; 
 	..
@@ -27,7 +27,7 @@ template<typename T>
 class LessThan {
 
 		const T val; /* value compare against */
-		
+
 		public:
 			LessThan(const T& v) : val(v) {}
 			bool operator()(const T& x) const { return x < val; } /* Call operator */
@@ -38,7 +38,7 @@ template<typename T>
 class MoreThan {
 
 		const T val; /* value compare against */
-		
+
 		public:
 			MoreThan(const T& v) : val(v) {}
 			bool operator()(const T& x) const { return x > val; } /* Call operator */
@@ -50,7 +50,7 @@ class WithinRange {
 
 		const T valMin; /* value compare against */
 		const T valMax; /* value compare against */
-		
+
 		public:
 			WithinRange(const T& vmin, const T& vmax) : valMin(vmin),valMax(vmax) {}
 			bool operator()(const T& x) const { return (x >= valMin) && (x <= valMax); } /* Call operator */
